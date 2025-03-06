@@ -1,28 +1,35 @@
 # Diseño
 
-- Proyecto desarrollado siguiendo las directrices de lo visto en el apartado de [Diseño](https://github.com/mmasias/IdSw2/blob/main/temario/01-dise%C3%B1o/README.md).
+## 1. Introducción
+El diseño de este proyecto es fundamental para estructurar adecuadamente la solución, facilitando su mantenimiento y evolución.  
+Al tratarse de una hoja de cálculo en consola, es esencial definir un diseño que permita:  
 
-El proyecto abordado el es de la [hoja de cálculo](https://github.com/puntoReflex/pyHojaDeCalculo/blob/main/enunciado.md) que tiene las siguientes indicaciones:
+- Navegación fluida.  
+- Almacenamiento eficiente de los datos.  
+- Interfaz de usuario intuitiva dentro de una terminal.  
 
-| *ID* | *Indicación* |
-|-|-|
-| 1 | La hoja de cálculo debe mostrar 15 filas por 9 columnas. |
-| 2 | Debe tener, además, 28 columnas y 100 filas |
-| 3 | La navegación mediante w/a/s/d |
-| 4 | Para ingresar un valor, se debe utilizar el comando e |
-| 5 | Para terminar, utilizar el comando q |
-| 6 | Las celdas deben tener un ancho de 7 caracteres. |
-| 7 | En caso que el usuario ingrese contenido de más de 7 caracteres, se deben mostrar los 7 primeros caracteres |
+## 2. Análisis vs. Diseño
 
-En base a estas reglas se ha generado un modelo del dominio de forma muy simple que sería el que se muestra a continuación
-<div align=center>
+| **Análisis** | **Diseño** |
+|-------------|----------|
+| Refinamiento y estructura de requisitos para su comprensión y mantenimiento. | Desarrollo enfocado en requisitos no funcionales y dominio de la solución. |
+| Especificación más precisa de los requisitos. | Consideración de aspectos técnicos como lenguajes de programación, reutilización de componentes y tecnologías involucradas. |
+| Uso del lenguaje de los desarrolladores para estructurar el sistema. | Aplicación de conceptos como concurrencia, bases de datos, interfaz de usuario y gestión de transacciones. |
+| Diseño suficiente (Just Enough Design Upfront vs. Big Design Upfront). | Implementación con vistas de diseño/lógica y despliegue. |
+
+## 3. Objetivo del Diseño
+El diseño busca garantizar que el sistema sea:  
+
+- **Flexible**: Capaz de adaptarse a futuras mejoras.  
+- **Escalable**: Manejo eficiente de filas y columnas.  
+- **Intuitivo**: Navegación clara mediante comandos (`W/A/S/D` para moverse, `E` para editar, `Q` para salir).  
+- **Estructurado**: Representación clara de la hoja de cálculo con encabezados de filas y columnas.  
+
+## 4. Modelo del Dominio
 
 ![Modelo del Dominio](/images/modelosUML/ModeloDominio.svg)
 
-</div>
-
-
-- **HojaCalculo:** Representa la hoja de cálculo, tiene una matriz de Celda y métodos para navegar, editar y terminar la aplicación.
-- **Celda:** Almacena contenido con una restricción de 7 caracteres y proporciona métodos para acceder o modificar su contenido.
-- **InterfazUsuario:** Se encarga de mostrar la hoja de cálculo y capturar la entrada del usuario.
-- **Teclado:** Simula la captura de teclas como w/a/s/d, e y q para interactuar con la hoja de cálculo.
+## 5. Principios de Diseño
+- Uso de **composición sobre herencia** para facilitar la reutilización.  
+- **Legibilidad del código** mediante nombres descriptivos y convenciones claras.  
+- **Mantenimiento y extensibilidad**, asegurando que nuevas funcionalidades puedan incorporarse sin afectar el sistema base.  

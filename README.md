@@ -1,13 +1,32 @@
-# Sesiones de diseño
+# Sesiones de Diseño - Ingeniería del Software II  
 
-Repositorio de las sesiones de diseño de la asignatura de Ingeniería del Software II de UNEATLANTICO.
+### Universidad Europea del Atlántico (UNEATLANTICO)  
 
-Se desarrolla, en un caso controlado, la disciplina de diseño, con el objetivo de capacitarnos para la descomposición del trabajo de implementación en piezas manejables, las que serán gestionadas por diferentes equipos de desarrollo, posiblemente al mismo tiempo.
+Este repositorio contiene las sesiones de diseño de la asignatura **Ingeniería del Software II**, enfocadas en la disciplina de diseño y su aplicación en proyectos de software.  
 
-<div align=center>
+## 📌 Objetivo  
+El propósito de estas sesiones es desarrollar la capacidad de **descomponer el trabajo de implementación** en piezas manejables, permitiendo su gestión por diferentes equipos de desarrollo de manera simultánea y eficiente.  
 
-| |Proyecto|[D](/documentos/entregas.d.md)|[DM](/documentos/entregas.dM.md)|[DOO](/documentos/entregas.dOO.md)|Final
-| --- | --- | --- | --- | --- | --- |
-| ||12/3|12/4|12/5|31/5
-|3|[pyHojaDeCalculo](https://github.com/puntoReflex/pyHojaDeCalculo/blob/main/enunciado.md)| [Entrega1](/documentos/entregas.d.md)
-</div>
+El **proyecto principal** que se abordará es la implementación de una **hoja de cálculo en consola**.
+
+## 📂 Documentación y Entregas  
+
+A continuación, se presentan las fechas y enlaces a los documentos entregables relacionados con el proyecto.  
+
+<div align="center">
+
+| # | Proyecto | Diseño (D) | Modelo de Dominio (DM) | Diseño Orientado a Objetos (DOO) | Entrega Final |
+|---|----------|------------|-------------------------|----------------------------------|--------------|
+| | | **12/03** | **14/04** | **12/05** | **31/05** |
+| 3 | [pyHojaDeCalculo](https://github.com/puntoReflex/pyHojaDeCalculo/blob/main/enunciado.md) | [Entrega 1](/documentos/entregas.d.md) | [Entrega 2](/documentos/entregas.dM.md) | [Entrega 3](/documentos/entregas.dOO.md) | [Entrega Final]() |
+
+</div>  
+
+## 🚀 Desarrollo del Proyecto  
+
+El proyecto se basa en los principios de **diseño estructurado**, asegurando:  
+- **Asociación**: Relación entre distintos componentes del sistema para garantizar la interoperabilidad.  
+- **Agregación**: Permite añadir nuevas funcionalidades sin afectar la estructura principal del código.  
+- **Uso**: Implementación de código claro, reutilizable y bien documentado.  
+- **Composición**: Integración de múltiples módulos para facilitar el trabajo colaborativo y la escalabilidad del sistema.  
+
