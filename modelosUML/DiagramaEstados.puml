@@ -1,0 +1,38 @@
+@startuml
+
+[*] --> HojaDeCalculoIniciada
+
+state HojaDeCalculoIniciada {
+  [*] --> SinEdicion
+  SinEdicion --> Editando : e
+  SinEdicion --> Terminada : q
+  SinEdicion --> Navegando : w/a/s/d
+
+  state Navegando {
+    [*] --> PosicionInicial
+    PosicionInicial --> Arriba : w
+    PosicionInicial --> Izquierda : a
+    PosicionInicial --> Abajo : s
+    PosicionInicial --> Derecha : d
+    Arriba --> PosicionInicial : w
+    Izquierda --> PosicionInicial : a
+    Abajo --> PosicionInicial : s
+    Derecha --> PosicionInicial : d
+  }
+
+  state Editando {
+    [*] --> IngresandoContenido
+    IngresandoContenido --> ContenidoLargo : ingresarContenido()
+    ContenidoLargo --> IngresandoContenido : mostrarContenidoCorto()
+    IngresandoContenido --> Navegando : w/a/s/d
+    IngresandoContenido --> Terminada : q
+  }
+
+  state Terminada {
+    [*] --> Finalizada
+  }
+
+  SinEdicion --> Terminada : q
+}
+
+@enduml

@@ -29,7 +29,11 @@ El diseño busca garantizar que el sistema sea:
 
 ![Modelo del Dominio](/images/modelosUML/ModeloDominio.svg)
 
-## 5. Principios de Diseño
+## 5. Diagrama de estados de la hoja del cálculo
+
+![Diagrama de Estados](/images/modelosUML/DiagramaEstados.svg)
+
+## 6. Principios de Diseño
 - Uso de **composición sobre herencia** para facilitar la reutilización.  
 - **Legibilidad del código** mediante nombres descriptivos y convenciones claras.  
 - **Mantenimiento y extensibilidad**, asegurando que nuevas funcionalidades puedan incorporarse sin afectar el sistema base.  
