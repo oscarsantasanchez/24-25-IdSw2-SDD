@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/-Inicio-FFF?style=flat&logo=Emlakjet&logoColor=black)](/README.md) [![](https://img.shields.io/badge/-Entrega_1-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.d.md) [![](https://img.shields.io/badge/-Entrega_2-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dM.md)  [![](https://img.shields.io/badge/-Entrega_3-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dOO.md)  [![](https://img.shields.io/badge/-Entrega_4-FFF?style=flat&logo=openstreetmap&logoColor=black)]()
+
+
 # Diseño
 
 ## 1. Introducción
@@ -27,13 +30,15 @@ El diseño busca garantizar que el sistema sea:
 
 ## 4. Modelo del Dominio
 
-![Modelo del Dominio](/images/modelosUML/ModeloDominio.svg)
+### Diagrama de clases
 
-## 5. Diagrama de estados de la hoja del cálculo
+![Diagrama de clases](/images/modelosUML/DiagramaClases.svg)
+
+### Diagrama de estados de la hoja del cálculo
 
 ![Diagrama de Estados](/images/modelosUML/DiagramaEstados.svg)
 
-## 6. Principios de Diseño
+## 5. Principios de Diseño
 - Uso de **composición sobre herencia** para facilitar la reutilización.  
 - **Legibilidad del código** mediante nombres descriptivos y convenciones claras.  
 - **Mantenimiento y extensibilidad**, asegurando que nuevas funcionalidades puedan incorporarse sin afectar el sistema base.  
