@@ -1,7 +1,6 @@
 [![](https://img.shields.io/badge/-Inicio-FFF?style=flat&logo=Emlakjet&logoColor=black)](/README.md) [![](https://img.shields.io/badge/-Entrega_1-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.d.md) [![](https://img.shields.io/badge/-Entrega_2-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dM.md)  [![](https://img.shields.io/badge/-Entrega_3-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dOO.md)  [![](https://img.shields.io/badge/-Entrega_4-FFF?style=flat&logo=openstreetmap&logoColor=black)]()
 
-
-# Diseño
+# Diseño (D)
 
 ## 1. Introducción
 El diseño de este proyecto es fundamental para estructurar adecuadamente la solución, facilitando su mantenimiento y evolución.  
@@ -11,16 +10,7 @@ Al tratarse de una hoja de cálculo en consola, es esencial definir un diseño q
 - Almacenamiento eficiente de los datos.  
 - Interfaz de usuario intuitiva dentro de una terminal.  
 
-## 2. Análisis vs. Diseño
-
-| **Análisis** | **Diseño** |
-|-------------|----------|
-| Refinamiento y estructura de requisitos para su comprensión y mantenimiento. | Desarrollo enfocado en requisitos no funcionales y dominio de la solución. |
-| Especificación más precisa de los requisitos. | Consideración de aspectos técnicos como lenguajes de programación, reutilización de componentes y tecnologías involucradas. |
-| Uso del lenguaje de los desarrolladores para estructurar el sistema. | Aplicación de conceptos como concurrencia, bases de datos, interfaz de usuario y gestión de transacciones. |
-| Diseño suficiente (Just Enough Design Upfront vs. Big Design Upfront). | Implementación con vistas de diseño/lógica y despliegue. |
-
-## 3. Objetivo del Diseño
+## 2. Objetivo del Diseño
 El diseño busca garantizar que el sistema sea:  
 
 - **Flexible**: Capaz de adaptarse a futuras mejoras.  
@@ -28,19 +18,19 @@ El diseño busca garantizar que el sistema sea:
 - **Intuitivo**: Navegación clara mediante comandos (`W/A/S/D` para moverse, `E` para editar, `Q` para salir).  
 - **Estructurado**: Representación clara de la hoja de cálculo con encabezados de filas y columnas.  
 
-## 4. Modelo del Dominio
+## 3. Modelo del Dominio
 
 ### Diagrama de clases
 
 ![Diagrama de clases](/images/modelosUML/DiagramaClases.svg)
 
-### Diagrama de estados de la hoja del cálculo
+### Diagrama de Estados
 
-![Diagrama de Estados](/images/modelosUML/DiagramaEstados.svg)
+| **HojaCalculo** | **Finalizar HojaCalculo** |
+|-------------|----------|
+| ![Diagrama de Estados](/images/modelosUML/DiagramaEstados.svg) | ![FinalizarHojaCalculo](/images/modelosUML/FinalizarHojaCalculo.svg) |
 
-![Diagrama de estado](/images/modelosUML/FinalizarHojaCalculo.svg)
-
-## 5. Código
+## 4. Código
 
 Vemos cómo funcionan las clases y cómo se relacionan entre sí, una vez ya implementadas en el código.
 
