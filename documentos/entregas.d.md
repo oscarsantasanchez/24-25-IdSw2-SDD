@@ -40,7 +40,8 @@ El diseño busca garantizar que el sistema sea:
 
 ![Diagrama de estado](/images/modelosUML/FinalizarHojaCalculo.svg)
 
-## 5. Principios de Diseño
-- Uso de **composición sobre herencia** para facilitar la reutilización.  
-- **Legibilidad del código** mediante nombres descriptivos y convenciones claras.  
-- **Mantenimiento y extensibilidad**, asegurando que nuevas funcionalidades puedan incorporarse sin afectar el sistema base.  
+## 5. Código
+
+Siguiendo el modelo de dominio, se implementa el código en Java para la hoja de cálculo.
+
+![Código Java](/images/Codigo.png)
