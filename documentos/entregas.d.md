@@ -32,14 +32,14 @@ El diseño busca garantizar que el sistema sea:
 
 ## 4. Código
 
-Vemos cómo funcionan las clases y cómo se relacionan entre sí, una vez ya implementadas en el código.
+Vemos cómo funcionan las clases y cómo se relacionan entre sí, una vez ya implementadas en el [código](/src/HojaCalculo.java).
 
 | Clase               | Descripción | Relaciones de Composición |
 |---------------------|-------------|---------------------------|
-| **ComponenteHoja**  | Clase base abstracta con constantes y métodos comunes. | N/A |
-| **Matriz**          | Representa la cuadrícula de datos de la hoja de cálculo. | Contenida en HojaCalculo. Compone múltiples Celdas. |
-| **Celda**           | Almacena y formatea datos dentro de la hoja de cálculo. | Parte de Matriz. Visualizada por InterfazUsuario y modificada por Teclado. |
-| **Posicion**        | Define la ubicación dentro de la matriz y permite navegar. | Contenida en HojaCalculo. Visualizada por InterfazUsuario. |
-| **Teclado**         | Maneja la entrada de usuario y la edición de celdas. | Usada por InterfazUsuario. Modifica Celdas. |
-| **InterfazUsuario** | Muestra la hoja de cálculo y gestiona la interacción. | Usa HojaCalculo, agrega Teclado y visualiza Celdas y Posiciones. |
-| **HojaCalculo**     | Coordina la aplicación y sus componentes. | Contiene Matriz, Posicion e InterfazUsuario. |
+| [**ComponenteHoja**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L3)  | Clase base abstracta con constantes y métodos comunes. | N/A |
+| [**Matriz**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L77)          | Representa la cuadrícula de datos de la hoja de cálculo. | Contenida en HojaCalculo. Compone múltiples Celdas. |
+| [**Celda**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L52)           | Almacena y formatea datos dentro de la hoja de cálculo. | Parte de Matriz. Visualizada por InterfazUsuario y modificada por Teclado. |
+| [**Posicion**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L10)        | Define la ubicación dentro de la matriz y permite navegar. | Contenida en HojaCalculo. Visualizada por InterfazUsuario. |
+| [**Teclado**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L110)         | Maneja la entrada de usuario y la edición de celdas. | Usada por InterfazUsuario. Modifica Celdas. |
+| [**InterfazUsuario**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L137) | Muestra la hoja de cálculo y gestiona la interacción. | Usa HojaCalculo, agrega Teclado y visualiza Celdas y Posiciones. |
+| [**HojaCalculo**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L198)     | Coordina la aplicación y sus componentes. | Contiene Matriz, Posicion e InterfazUsuario. |
