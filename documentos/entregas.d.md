@@ -38,6 +38,8 @@ El diseño busca garantizar que el sistema sea:
 
 ![Diagrama de Estados](/images/modelosUML/DiagramaEstados.svg)
 
+![Diagrama de estado](/images/modelosUML/FinalizarHojaCalculo.svg)
+
 ## 5. Principios de Diseño
 - Uso de **composición sobre herencia** para facilitar la reutilización.  
 - **Legibilidad del código** mediante nombres descriptivos y convenciones claras.  
