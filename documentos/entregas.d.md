@@ -42,6 +42,12 @@ El diseño busca garantizar que el sistema sea:
 
 ## 5. Código
 
-Siguiendo el modelo de dominio, se implementa el código en Java para la hoja de cálculo.
-
-![Código Java](/images/Codigo.png)
+| Clase               | Descripción | Relaciones de Composición |
+|---------------------|-------------|---------------------------|
+| **ComponenteHoja**  | Clase base abstracta con constantes y métodos comunes. | N/A |
+| **Matriz**          | Representa la cuadrícula de datos de la hoja de cálculo. | Contenida en HojaCalculo. Compone múltiples Celdas. |
+| **Celda**           | Almacena y formatea datos dentro de la hoja de cálculo. | Parte de Matriz. Visualizada por InterfazUsuario y modificada por Teclado. |
+| **Posicion**        | Define la ubicación dentro de la matriz y permite navegar. | Contenida en HojaCalculo. Visualizada por InterfazUsuario. |
+| **Teclado**         | Maneja la entrada de usuario y la edición de celdas. | Usada por InterfazUsuario. Modifica Celdas. |
+| **InterfazUsuario** | Muestra la hoja de cálculo y gestiona la interacción. | Usa HojaCalculo, agrega Teclado y visualiza Celdas y Posiciones. |
+| **HojaCalculo**     | Coordina la aplicación y sus componentes. | Contiene Matriz, Posicion e InterfazUsuario. |

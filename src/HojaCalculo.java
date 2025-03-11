@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
-// Clase base abstracta para implementar herencia
+// Clase base abstracta ComponenteHoja
+// Actúa como superclase en la jerarquía de herencia
+// Proporciona constantes y métodos abstractos comunes para los componentes de la hoja
 abstract class ComponenteHoja {
     protected static final int ANCHO_CELDA = 7;
     protected static final String VACIO = "       ";
@@ -9,7 +11,10 @@ abstract class ComponenteHoja {
     public abstract void inicializar();
 }
 
-// Clase posición
+// Clase Posicion
+// Implementa el concepto de ubicación dentro de la matriz
+// Es compuesta por HojaCalculo (relación "tiene")
+// Proporciona métodos de navegación para moverse por la hoja
 class Posicion {
     private int fila;
     private int columna;
@@ -54,6 +59,9 @@ class Posicion {
 }
 
 // Clase Celda
+// Representa cada celda individual de la hoja de cálculo
+// Es compuesta por la clase Matriz (relación "compuesta de")
+// Es visualizada y modificada por InterfazUsuario y Teclado respectivamente
 class Celda {
     private String contenidoCompleto;
     private String contenidoVisible;
@@ -79,7 +87,10 @@ class Celda {
     }
 }
 
-// Clase Matriz que hereda de ComponenteHoja y utiliza composición con Celda
+// Clase Matriz
+// Hereda de ComponenteHoja implementando el principio de herencia
+// Es compuesta por HojaCalculo (relación "contiene")
+// Utiliza composición con la clase Celda para almacenar datos
 class Matriz extends ComponenteHoja {
     private final int TOTAL_FILAS;
     private final int TOTAL_COLUMNAS;
@@ -113,7 +124,10 @@ class Matriz extends ComponenteHoja {
     }
 }
 
-// Clase Teclado para manejar la entrada
+// Clase Teclado
+// Maneja la entrada del usuario
+// Es usada por InterfazUsuario (relación de agregación)
+// Tiene la capacidad de modificar el contenido de las celdas
 class Teclado {
     private Scanner scanner;
     
@@ -142,6 +156,10 @@ class Teclado {
 }
 
 // Clase InterfazUsuario
+// Responsable de la visualización y interacción con el usuario
+// Es compuesta por HojaCalculo (relación "utiliza")
+// Utiliza agregación con la clase Teclado (relación "usa")
+// Visualiza Celda y Posicion para mostrar la hoja de cálculo
 class InterfazUsuario {
     private static final int VISIBLE_FILAS = 15;
     private static final int VISIBLE_COLUMNAS = 9;
@@ -203,7 +221,10 @@ class InterfazUsuario {
     }
 }
 
-// Clase principal HojaCalculo que usa composición
+// Clase principal HojaCalculo
+// Actúa como controlador principal de la aplicación
+// Implementa composición con Matriz, Posicion e InterfazUsuario
+// Coordina las interacciones entre los distintos componentes del sistema
 public class HojaCalculo {
     private static final int TOTAL_FILAS = 100;
     private static final int TOTAL_COLUMNAS = 28;
