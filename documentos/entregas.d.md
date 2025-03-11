@@ -26,8 +26,8 @@ El diseño busca garantizar que el sistema sea:
 
 ### Diagrama de Estados
 
-| **HojaCalculo** | **Finalizar HojaCalculo** |
-|-------------|----------|
+| **HojaCalculo** | **Finalizar HojaCalculo** | **Diagrama De Estados Matriz** | **Diagrama De Estados Celda** | **Diagrama De Estados Interfaz De Usuario** |
+|-------------|----------|----------|----------|----------|
 | ![Diagrama de Estados](/images/modelosUML/DiagramaEstados.svg) | ![FinalizarHojaCalculo](/images/modelosUML/FinalizarHojaCalculo.svg) | ![Diagrama de Estados Matriz](/images/modelosUML/DiagramaEstadosMatriz.svg) | ![Diagrama de Estados Celda](/images/modelosUML/DiagramaEstadosCelda.svg) |  ![Diagrama de Estados InterfazUsuario](/images/modelosUML/DiagramaEstadosInterfazUsuario.svg) |
 
 ## 4. Código
