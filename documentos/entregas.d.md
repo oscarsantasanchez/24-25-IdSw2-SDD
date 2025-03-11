@@ -42,6 +42,8 @@ El diseño busca garantizar que el sistema sea:
 
 ## 5. Código
 
+Vemos cómo funcionan las clases y cómo se relacionan entre sí, una vez ya implementadas en el código.
+
 | Clase               | Descripción | Relaciones de Composición |
 |---------------------|-------------|---------------------------|
 | **ComponenteHoja**  | Clase base abstracta con constantes y métodos comunes. | N/A |
