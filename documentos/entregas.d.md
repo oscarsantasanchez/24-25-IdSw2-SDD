@@ -44,7 +44,7 @@ Vemos cómo funcionan las clases y cómo se relacionan entre sí, una vez ya imp
 | [**InterfazUsuario**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L137) | Muestra la hoja de cálculo y gestiona la interacción. | Usa HojaCalculo, agrega Teclado y visualiza Celdas y Posiciones. |
 | [**HojaCalculo**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L198)     | Coordina la aplicación y sus componentes. | Contiene Matriz, Posicion e InterfazUsuario. |
 
-## 5. Legibilidad.
+## 5. Legibilidad
 
 | **Aspecto**           | **Descripción** |
 |----------------------|---------------|
