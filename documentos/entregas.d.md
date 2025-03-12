@@ -22,7 +22,7 @@ El diseño busca garantizar que el sistema sea:
 
 ### Diagrama de clases
 
-![Diagrama de clases](/images/modelosUML/DiagramaClases.svg)
+![Diagrama de clases](/images/modelosUML/DiagramaClases1.svg)
 
 ### Diagrama de Estados
 
