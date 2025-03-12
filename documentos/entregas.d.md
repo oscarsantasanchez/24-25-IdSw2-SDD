@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/-Inicio-FFF?style=flat&logo=Emlakjet&logoColor=black)](/README.md) [![](https://img.shields.io/badge/-Entrega_1-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.d.md) [![](https://img.shields.io/badge/-Entrega_2-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dM.md)  [![](https://img.shields.io/badge/-Entrega_3-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dOO.md)  [![](https://img.shields.io/badge/-Entrega_4-FFF?style=flat&logo=openstreetmap&logoColor=black)]()
+[![Inicio](https://img.shields.io/badge/-Inicio-FFF?style=flat&logo=Emlakjet&logoColor=black)](/README.md) [![Diseño](https://img.shields.io/badge/-Entrega_1-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.d.md) [![Diseño Modular](https://img.shields.io/badge/-Entrega_2-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dM.md)  [![Diseño Orientado a Objetos](https://img.shields.io/badge/-Entrega_3-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dOO.md)  [![Entrega Final](https://img.shields.io/badge/-Entrega_4-FFF?style=flat&logo=openstreetmap&logoColor=black)]()
 
 # Diseño (D)
 
@@ -43,3 +43,11 @@ Vemos cómo funcionan las clases y cómo se relacionan entre sí, una vez ya imp
 | [**Teclado**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L110)         | Maneja la entrada de usuario y la edición de celdas. | Usada por InterfazUsuario. Modifica Celdas. |
 | [**InterfazUsuario**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L137) | Muestra la hoja de cálculo y gestiona la interacción. | Usa HojaCalculo, agrega Teclado y visualiza Celdas y Posiciones. |
 | [**HojaCalculo**](https://github.com/oscarsantasanchez/24-25-IdSw2-SDD/blob/1262ea1a57e90b63dfb4db57a52fc116fa828348/src/HojaCalculo.java#L198)     | Coordina la aplicación y sus componentes. | Contiene Matriz, Posicion e InterfazUsuario. |
+
+## 5. Legibilidad.
+
+| **Aspecto**           | **Descripción** |
+|----------------------|---------------|
+| **Nombres claros** | Clases como `Matriz`, `Celda` e `InterfazUsuario` reflejan bien su propósito. |
+| **Estructura organizada** | Diagramas UML muestran relaciones bien definidas entre componentes. |
+| **Modularidad** | Cada clase tiene una función específica (`Teclado` modifica `Celda`, `HojaCalculo` coordina). |
