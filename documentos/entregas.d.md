@@ -26,7 +26,7 @@ El diseño busca garantizar que el sistema sea:
 
 ### Diagrama de Estados
 
-| **Diagrama De Estados Matriz** | **Diagrama De Estados Celda** | **Diagrama De Estados Interfaz De Usuario** |
+| **Matriz** | **Celda** | **Interfaz De Usuario** |
 |----------|----------|----------|
 | ![Diagrama de Estados Matriz](/images/modelosUML/DiagramaEstadosMatriz.svg) | ![Diagrama de Estados Celda](/images/modelosUML/DiagramaEstadosCelda.svg) |  ![Diagrama de Estados InterfazUsuario](/images/modelosUML/DiagramaEstadosInterfazUsuario.svg) |
 
