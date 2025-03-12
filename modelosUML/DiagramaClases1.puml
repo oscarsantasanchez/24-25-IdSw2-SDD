@@ -10,13 +10,13 @@ package "Hoja de Cálculo" {
   class InterfazUsuario
   class Teclado
   class HojaCalculo
-  
+
   ComponenteHoja <|-- Matriz
   HojaCalculo *-- Matriz : contiene
   HojaCalculo *-- Posicion : tiene
   HojaCalculo *-- InterfazUsuario : utiliza
   Matriz *-- Celda : compuesta de
-  InterfazUsuario o-- Teclado : usa
+  InterfazUsuario *-- Teclado : usa
   InterfazUsuario ..> Celda : visualiza
   InterfazUsuario ..> Posicion : muestra
   Teclado ..> Celda : modifica
