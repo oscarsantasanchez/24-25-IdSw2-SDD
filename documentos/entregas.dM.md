@@ -9,6 +9,43 @@
 |-|-|
 |![Jerarquizacion](/images/modelosUML/opcion1Modular.svg)| ![Jerarquizacion](/images/modelosUML/DiagramaClases1.svg)|
 
+>**EXPLICACION**
+
+🔍 Correcciones y Mejoras en base al diagrama de estados que hay en apartado de [diseño](/documentos/entregas.d.md)
+Herencia de ComponenteHoja
+
+✅ Correcto: Matriz, Celda, Posicion, Teclado e InterfazUsuario heredan de ComponenteHoja.
+
+🔧 Falta: Agregar herencia a las otras clases (Celda, Posicion, Teclado, InterfazUsuario), ya que también extienden ComponenteHoja.
+
+Relación entre Teclado y InterfazUsuario
+
+✅ Correcto: InterfazUsuario usa Teclado.
+
+🔧 Falta: HojaCalculo también usa Teclado, ya que lo obtiene desde InterfazUsuario.
+
+Composición entre Matriz y Celda
+
+✅ Correcto: Matriz tiene una matriz de Celda.
+
+🔧 Ajuste menor: La relación es composición fuerte (Celda no puede existir sin Matriz).
+
+Uso de Posicion en InterfazUsuario
+
+✅ Correcto: InterfazUsuario usa Posicion para mostrar la celda activa.
+
+🔧 Podría ser más claro: Indicar que InterfazUsuario consulta Posicion para resaltar la celda activa.
+
+🔥 ¿Qué cambió?
+Se añadió la herencia completa de ComponenteHoja a todas las clases que la extienden.
+
+Se aclaró que HojaCalculo usa Teclado indirectamente.
+
+Se reforzó la relación entre InterfazUsuario y Posicion, indicando que la usa para visualizar la celda activa.
+
+_Opcion 1 es el Opcion 2 con las mejoras y el Opcion 1 es el mismo que en el de diseño_
+
+>**HASTA AQUI ES UNA EXPLICACION DE LOS CAMBIOS EN EL DIAGRAMA DE CLASES, COSA QUE LUEGO SE BORRA**
 ---
 ## 2. **Módulos y Clases**
 
