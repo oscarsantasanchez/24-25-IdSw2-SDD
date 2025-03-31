@@ -20,7 +20,7 @@ A continuación, se presentan las fechas y enlaces a los documentos entregables 
 
 | # | Proyecto | Diseño (D) | Modelo de Dominio (DM) | Diseño Orientado a Objetos (DOO) | Entrega Final |
 |---|----------|------------|-------------------------|----------------------------------|--------------|
-| | | **12/03** | **14/04** | **12/05** | **31/05** |
+| | | **12/03** | **12/04** | **12/05** | **31/05** |
 | 3 | [pyHojaDeCalculo](https://github.com/puntoReflex/pyHojaDeCalculo/blob/main/enunciado.md) | [Entrega 1](/documentos/entregas.d.md) | [Entrega 2](/documentos/entregas.dM.md) | [Entrega 3](/documentos/entregas.dOO.md) | [Entrega Final]() |
 
 </div>  
