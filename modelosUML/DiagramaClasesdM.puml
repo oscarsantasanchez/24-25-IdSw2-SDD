@@ -1,0 +1,37 @@
+@startuml
+
+hide  class
+hide empty members
+
+package HojaCalculo{
+
+' Clases principales
+class HojaCalculo
+class Matriz
+class Celda
+class Posicion
+class InterfazUsuario
+class Teclado
+abstract class ComponenteHoja
+
+' Herencia
+ComponenteHoja <|-- Matriz
+ComponenteHoja <|-- Celda
+ComponenteHoja <|-- Posicion
+ComponenteHoja <|-- Teclado
+ComponenteHoja <|-- InterfazUsuario
+
+' Composición y asociaciones
+HojaCalculo *-- Matriz : contiene
+HojaCalculo *-- InterfazUsuario : utiliza
+HojaCalculo *-- Posicion : tiene
+HojaCalculo --> Teclado : obtiene de UI
+
+Matriz *-- Celda : compuesta de
+InterfazUsuario *-- Teclado : usa
+InterfazUsuario --> Posicion : consulta
+InterfazUsuario --> Matriz : visualiza
+
+Teclado --> Celda : modifica
+}
+@enduml

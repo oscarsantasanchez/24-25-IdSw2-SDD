@@ -5,48 +5,10 @@
 
 ## **Jerarquización del Proyecto**
 
-|Opcion 1 | Opcion 2|
-|-|-|
-|![Jerarquizacion](/images/modelosUML/opcion1Modular.svg)| ![Jerarquizacion](/images/modelosUML/DiagramaClases1.svg)|
+| Diagrama de Clases|
+|-|
+|![Jerarquizacion](/images/modelosUML/DiseñoModular.svg)| !
 
->**EXPLICACION**
-
-🔍 Correcciones y Mejoras en base al diagrama de estados que hay en apartado de [diseño](/documentos/entregas.d.md)
-Herencia de ComponenteHoja
-
-✅ Correcto: Matriz, Celda, Posicion, Teclado e InterfazUsuario heredan de ComponenteHoja.
-
-🔧 Falta: Agregar herencia a las otras clases (Celda, Posicion, Teclado, InterfazUsuario), ya que también extienden ComponenteHoja.
-
-Relación entre Teclado y InterfazUsuario
-
-✅ Correcto: InterfazUsuario usa Teclado.
-
-🔧 Falta: HojaCalculo también usa Teclado, ya que lo obtiene desde InterfazUsuario.
-
-Composición entre Matriz y Celda
-
-✅ Correcto: Matriz tiene una matriz de Celda.
-
-🔧 Ajuste menor: La relación es composición fuerte (Celda no puede existir sin Matriz).
-
-Uso de Posicion en InterfazUsuario
-
-✅ Correcto: InterfazUsuario usa Posicion para mostrar la celda activa.
-
-🔧 Podría ser más claro: Indicar que InterfazUsuario consulta Posicion para resaltar la celda activa.
-
-🔥 ¿Qué cambió?
-Se añadió la herencia completa de ComponenteHoja a todas las clases que la extienden.
-
-Se aclaró que HojaCalculo usa Teclado indirectamente.
-
-Se reforzó la relación entre InterfazUsuario y Posicion, indicando que la usa para visualizar la celda activa.
-
-_Opcion 1 es el Opcion 2 con las mejoras y el Opcion 1 es el mismo que en el de diseño_
-
->**HASTA AQUI ES UNA EXPLICACION DE LOS CAMBIOS EN EL DIAGRAMA DE CLASES, COSA QUE LUEGO SE BORRA**
----
 ## 2. **Módulos y Clases**
 
 ### 2.1 **ComponenteHoja (Clase Base)**
@@ -269,6 +231,21 @@ public class HojaCalculo extends ComponenteHoja {
         }
     }
 }
+
 ```
+
+## TIPO DE JERARQUIZACIÓN
+
+El proyecto de la hoja de cálculo presenta una jerarquización **botton-up (ascendente)**, ya que se empiezan por los componentes más básicos (Celda, Posición, Teclado) y posteriormente se combinan para formar estructuras más complejas como (Matriz, interfazUsuario y HojaCalculo).
+
+| Nivel         | Clase             | Depende de / Usa                  | Descripción                                                                 |
+|---------------|------------------|-----------------------------------|-----------------------------------------------------------------------------|
+| 🧱 Básico      | `Celda`          | -                                 | Representa una celda individual con contenido completo y visible.          |
+|               | `Posicion`       | -                                 | Controla la fila y columna actual del cursor en la hoja.                   |
+|               | `Teclado`        | -                                 | Gestiona la entrada del usuario desde consola.                             |
+| 🧩 Medio       | `Matriz`         | `Celda`                           | Composición de celdas, estructura completa de la hoja.                     |
+|               | `InterfazUsuario`| `Teclado`, `Matriz`, `Posicion`   | Controla la visualización de la hoja y la interacción con el usuario.      |
+| 🧠 Alto        | `HojaCalculo`    | `Matriz`, `Posicion`, `InterfazUsuario` | Clase principal que coordina toda la aplicación y su ciclo de ejecución.   |
+| 🧬 Herencia    | `ComponenteHoja` | -                                 | Clase base abstracta que provee constantes y utilidades a las demás clases.|
 
 
