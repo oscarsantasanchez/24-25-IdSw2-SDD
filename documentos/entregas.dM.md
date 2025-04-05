@@ -3,11 +3,24 @@
 
 # Diseño modular
 
-## **Jerarquización del Proyecto**
+## 1. **Jerarquización del Proyecto**
 
 | Diagrama de Clases|
 |-|
 |![Jerarquizacion](/images/modelosUML/DiseñoModular.svg)| !
+
+El proyecto de la hoja de cálculo presenta una jerarquización **botton-up (ascendente)**, ya que se empiezan por los componentes más básicos (Celda, Posición, Teclado) y posteriormente se combinan para formar estructuras más complejas como (Matriz, interfazUsuario y HojaCalculo).
+
+| Nivel         | Clase             | Depende de / Usa                  | Descripción                                                                 |
+|---------------|------------------|-----------------------------------|-----------------------------------------------------------------------------|
+| 🧱 Básico      | [Celda](/src/Celda.java)          | -                                 | Representa una celda individual con contenido completo y visible.          |
+|               | [Posicion](/src/Posicion.java)       | -                                 | Controla la fila y columna actual del cursor en la hoja.                   |
+|               | [Teclado](/src/Teclado.java)        | -                                 | Gestiona la entrada del usuario desde consola.                             |
+| 🧩 Medio       | [Matriz](/src/Matriz.java)         | `Celda`                           | Composición de celdas, estructura completa de la hoja.                     |
+|               | [InterfazUsuario](/src/InterfazUsuario.java)| `Teclado`, `Matriz`, `Posicion`   | Controla la visualización de la hoja y la interacción con el usuario.      |
+| 🧠 Alto        | [HojaCalculo](/src/HojaCalculo.java)    | `Matriz`, `Posicion`, `InterfazUsuario` | Clase principal que coordina toda la aplicación y su ciclo de ejecución.   |
+| 🧬 Herencia    | [ComponenteHoja](/src/ComponenteHoja.java) | -                                 | Clase base abstracta que provee constantes y utilidades a las demás clases.|
+
 
 ## 2. **Módulos y Clases**
 
@@ -233,19 +246,3 @@ public class HojaCalculo extends ComponenteHoja {
 }
 
 ```
-
-## TIPO DE JERARQUIZACIÓN
-
-El proyecto de la hoja de cálculo presenta una jerarquización **botton-up (ascendente)**, ya que se empiezan por los componentes más básicos (Celda, Posición, Teclado) y posteriormente se combinan para formar estructuras más complejas como (Matriz, interfazUsuario y HojaCalculo).
-
-| Nivel         | Clase             | Depende de / Usa                  | Descripción                                                                 |
-|---------------|------------------|-----------------------------------|-----------------------------------------------------------------------------|
-| 🧱 Básico      | `Celda`          | -                                 | Representa una celda individual con contenido completo y visible.          |
-|               | `Posicion`       | -                                 | Controla la fila y columna actual del cursor en la hoja.                   |
-|               | `Teclado`        | -                                 | Gestiona la entrada del usuario desde consola.                             |
-| 🧩 Medio       | `Matriz`         | `Celda`                           | Composición de celdas, estructura completa de la hoja.                     |
-|               | `InterfazUsuario`| `Teclado`, `Matriz`, `Posicion`   | Controla la visualización de la hoja y la interacción con el usuario.      |
-| 🧠 Alto        | `HojaCalculo`    | `Matriz`, `Posicion`, `InterfazUsuario` | Clase principal que coordina toda la aplicación y su ciclo de ejecución.   |
-| 🧬 Herencia    | `ComponenteHoja` | -                                 | Clase base abstracta que provee constantes y utilidades a las demás clases.|
-
-
