@@ -68,12 +68,6 @@ Los tipos de acoplamiento que hay en el proyecto son **directo**, ya que todas l
 
 ## 2. **Análisis detallado por clases**
 
-> [!NOTE]  
-> Cohesión: ✅ Alta; 〽️ Moderada; ❌ Baja<br>
->  Acoplamiento: ✅ Bajo; 〽️ Moderado; ❌ Alto<br>
-> Tamaño: ✅ Excelente; 〽️ Adecuado; ❌ Grande
-
-
 <div align=center>
 
 | Clase    | Cohesión       | Acoplamiento | Tamaño     | Fortalezas     |
@@ -87,3 +81,7 @@ Los tipos de acoplamiento que hay en el proyecto son **directo**, ya que todas l
 | **HojaCalculo**    | ✅ (funcional) | 〽️     | 〽️   | - Punto de entrada claro<br>- Ciclo de vida definido<br>- Delega bien       |
 
 </div>
+ 
+<sup>✅ Alta/Bajo/Excelente</sup>  
+<sup>〽️ Moderado/Adecuado</sup>  
+<sup>❌ Baja/Alto/Grande</sup>
