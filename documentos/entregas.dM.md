@@ -15,19 +15,36 @@
 
 El proyecto de la hoja de cálculo presenta una jerarquización **botton-up (ascendente)**, ya que se empiezan por los componentes más básicos (Celda, Posición, Teclado) y posteriormente se combinan para formar estructuras más complejas como (Matriz, interfazUsuario y HojaCalculo). Cumple con los principios de jerarquización de ser un proyecto acíclico, direccional, estable y encapsulado.
 
-<div align=center>
+### Clases
 
-| Nivel         | Clase             | Depende de / Usa                  | Descripción                                                                 |
-|---------------|------------------|-----------------------------------|-----------------------------------------------------------------------------|
-| 🧱 Básico      | [Celda](/src/Celda.java)          | -                                 | Representa una celda individual con contenido completo y visible.          |
-|               | [Posicion](/src/Posicion.java)       | -                                 | Controla la fila y columna actual del cursor en la hoja.                   |
-|               | [Teclado](/src/Teclado.java)        | -                                 | Gestiona la entrada del usuario desde consola.                             |
-| 🧩 Medio       | [Matriz](/src/Matriz.java)         | `Celda`                           | Composición de celdas, estructura completa de la hoja.                     |
-|               | [InterfazUsuario](/src/InterfazUsuario.java)| `Teclado`, `Matriz`, `Posicion`   | Controla la visualización de la hoja y la interacción con el usuario.      |
-| 🧠 Alto        | [HojaCalculo](/src/HojaCalculo.java)    | `Matriz`, `Posicion`, `InterfazUsuario` | Clase principal que coordina todo el proyecto y su ciclo de ejecución.   |
-| 🧬 Herencia    | [ComponenteHoja](/src/ComponenteHoja.java) | -                                 | Clase base abstracta que provee constantes y utilidades a las demás clases.|
+**🧱 Nivel Básico**
 
-</div>
+| Clase                          | Depende de / Usa | Descripción                                                       |
+|--------------------------------|------------------|-------------------------------------------------------------------|
+| [Celda](/src/Celda.java)       | -                | Representa una celda individual con contenido completo y visible. |
+| [Posicion](/src/Posicion.java) | -                | Controla la fila y columna actual del cursor en la hoja.          |
+| [Teclado](/src/Teclado.java)   | -                | Gestiona la entrada del usuario desde consola.                    |
+
+**🧩 Nivel Medio**
+
+| Clase                                        | Depende de / Usa                | Descripción                                                           |
+|----------------------------------------------|---------------------------------|-----------------------------------------------------------------------|
+| [Matriz](/src/Matriz.java)                   | `Celda`                         | Composición de celdas, estructura completa de la hoja.                |
+| [InterfazUsuario](/src/InterfazUsuario.java) | `Teclado`, `Matriz`, `Posicion` | Controla la visualización de la hoja y la interacción con el usuario. |
+
+**🧠 Nivel Alto**
+
+| Clase                                | Depende de / Usa                        | Descripción                                                            |
+|--------------------------------------|-----------------------------------------|------------------------------------------------------------------------|
+| [HojaCalculo](/src/HojaCalculo.java) | `Matriz`, `Posicion`, `InterfazUsuario` | Clase principal que coordina todo el proyecto y su ciclo de ejecución. |
+
+**🧬 Herencia**
+
+| Clase                                      | Depende de / Usa | Descripción                                                                 |
+|--------------------------------------------|------------------|-----------------------------------------------------------------------------|
+| [ComponenteHoja](/src/ComponenteHoja.java) | -                | Clase base abstracta que provee constantes y utilidades a las demás clases. |
+
+---
 
 ### Cumplimiento de Principios fundamentales
 
@@ -41,6 +58,8 @@ El proyecto de la hoja de cálculo presenta una jerarquización **botton-up (asc
 
 </div>
 
+---
+
 ### Análisis del acoplamiento
 El acoplamiento es bastante bajo pero en la clase `InterfazUsuario` tiene un acoplamiento relativamente alto ya que depende de 3 clases y la clase `HojaCalculo` depende de varios componentes pero es normal debido a ser la clase principal que coordina todo el proyecto. 
 
@@ -49,10 +68,9 @@ Los tipos de acoplamiento que hay en el proyecto son **directo**, ya que todas l
 
 ## 2. **Análisis detallado por clases**
 
+> [!NOTE]  
 > Cohesión: ✅ Alta; 〽️ Moderada; ❌ Baja
-
 >  Acoplamiento: ✅ Bajo; 〽️ Moderado; ❌ Alto
-
 > Tamaño: ✅ Excelente; 〽️ Adecuado; ❌ Grande
 
 
