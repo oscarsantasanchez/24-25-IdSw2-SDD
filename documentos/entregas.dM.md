@@ -79,9 +79,9 @@ Los tipos de acoplamiento que hay en el proyecto son **directo**, ya que todas l
 | **Matriz**         | ✅ (funcional) | 〽️     | 〽️   | - Gestión bidimensional<br>- Inicialización adecuada<br>- Acceso controlado  |
 | **InterfazUsuario**| 〽️ (comunicacional) | ❌ | ❌     | - Encapsula visualización<br>- Formato claro<br>- Separa modelo-vista       |
 | **HojaCalculo**    | ✅ (funcional) | 〽️     | 〽️   | - Punto de entrada claro<br>- Ciclo de vida definido<br>- Delega bien       |
-
-</div>
  
 <sup>✅ Alta/Bajo/Excelente</sup>  
 <sup>〽️ Moderado/Adecuado</sup>  
 <sup>❌ Baja/Alto/Grande</sup>
+
+</div>
