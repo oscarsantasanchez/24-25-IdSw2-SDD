@@ -22,9 +22,9 @@
 
 | Tipo | Clases Involucradas | Diagrama |
 |------|---------------------|----------|
-| **Herencia** | `ComponenteHoja` → Clases hijas | ![Herencia](/images/modelosUML/HerenciaOO.svg) |
-| **Composición** | `Matriz` → `Celda` | ![Composicion](/images/modelosUML/ComposicionOO.svg) |
-| **Agregación** | `HojaCalculo` → `Matriz` | ![Agregacion](/images/modelosUML/AgregacionOO.svg) |
+| **Herencia** | `ComponenteHoja` → Clases hijas | ![Herencia](/images/modelosUML/DiagramaHerencia.svg) |
+| **Composición** | `Matriz` → `Celda` | ![Composicion](/images/modelosUML/DiagramaComposicion.svg) |
+| **Agregación** | `HojaCalculo` → `Matriz` | ![Agregacion](/images/modelosUML/DiagramaAgregacion.svg) |
 
 ## 3. 🛠️ Patrones de Diseño
 

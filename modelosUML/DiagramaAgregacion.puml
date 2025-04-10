@@ -1,0 +1,23 @@
+@startuml
+
+class HojaCalculo {
+    - matriz: Matriz
+    - interfaz: InterfazUsuario
+    + ejecutar(): void
+    + asignarMatriz(m: Matriz): void
+    + configurarInterfaz(ui: InterfazUsuario): void
+}
+
+class Matriz {
+    // métodos existentes
+}
+
+class InterfazUsuario {
+    - teclado: Teclado
+    + mostrar(): void
+    + actualizarVista(): void
+}
+
+HojaCalculo --  Matriz : utiliza \n(existencia independiente)
+HojaCalculo -- InterfazUsuario : contiene \n(referencia externa)
+

@@ -1,0 +1,21 @@
+@startuml
+
+class Matriz {
+    -celdas: Celda[][]
+    +obtenerCelda()
+}
+
+class Celda {
+    -contenido: String
+    +editar()
+}
+
+Matriz  --  Celda : contiene
+
+note top of Matriz
+ 🔷 Relación de Composición
+ La Matriz está compuesta
+ por múltiples Celdas
+ 
+end note
+@enduml
