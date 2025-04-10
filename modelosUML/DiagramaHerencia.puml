@@ -1,0 +1,29 @@
+@startuml
+
+abstract class ComponenteHoja {
+    {static} FILAS = 15
+    {static} COLUMNAS = 10
+    {abstract} actualizar()
+}
+
+class Celda {
+    -contenido: String
+    +mostrarContenido()
+}
+
+class Matriz {
+    -celdas: Celda[][]
+    +obtenerCelda()
+}
+
+class HojaCalculo {
+    -matriz: Matriz
+    +ejecutar()
+}
+
+ComponenteHoja <|-- Celda
+ComponenteHoja <|-- Matriz
+ComponenteHoja <|-- HojaCalculo
+
+
+@enduml
