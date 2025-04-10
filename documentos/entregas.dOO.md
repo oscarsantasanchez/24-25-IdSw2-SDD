@@ -1,7 +1,7 @@
 [![](https://img.shields.io/badge/-Inicio-FFF?style=flat&logo=Emlakjet&logoColor=black)](/README.md) [![](https://img.shields.io/badge/-Entrega_1-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.d.md) [![](https://img.shields.io/badge/-Entrega_2-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dM.md)  [![](https://img.shields.io/badge/-Entrega_3-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dOO.md)  [![](https://img.shields.io/badge/-Entrega_4-FFF?style=flat&logo=openstreetmap&logoColor=black)]()
 
 
-# 🧬 Diseño Orientado a Objetos (D.OO)
+# 🧬 Diseño Orientado a Objetos 
 
 ## 1. Principios Aplicados
 
@@ -18,7 +18,7 @@
 |-|
 |![Jerarquizacion](/images/modelosUML/DiseñoObjetos.svg)
 
-## 3. 🔗 Relaciones entre Clases
+## 2. 🔗 Relaciones entre Clases
 
 | Tipo | Clases Involucradas | Diagrama |
 |------|---------------------|----------|
@@ -26,7 +26,7 @@
 | **Composición** | `Matriz` → `Celda` | ![Composicion](/images/modelosUML/ComposicionOO.svg) |
 | **Agregación** | `HojaCalculo` → `Matriz` | ![Agregacion](/images/modelosUML/AgregacionOO.svg) |
 
-## 4. 🛠️ Patrones de Diseño
+## 3. 🛠️ Patrones de Diseño
 
 | Patrón | Aplicación | Beneficio |
 |--------|------------|-----------|
@@ -34,7 +34,7 @@
 | **Observer** | Actualización de la vista al modificar celdas | Sincronización modelo-vista |
 | **Factory** | Creación de celdas con diferentes formatos | Extensibilidad de tipos |
 
-## 5. ✅ Cumplimiento de Principios 
+## 4. ✅ Cumplimiento de Principios 
 
 | Principio | Cumplimiento | Ejemplo |
 |-----------|--------------|---------|
