@@ -44,6 +44,5 @@
 
 <div align=center>
 
-[![Arriba](https://img.shields.io/badge/-Volver_Arriba-5D5D5D?style=flat)](#diseño-orientado-a-objetos-doo)
 
 </div>
