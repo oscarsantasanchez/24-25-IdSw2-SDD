@@ -1,5 +1,10 @@
 # Hoja de Cálculo - Versión 2
 
+| Diagrama de Clases|
+|-|
+|![Diagrama](images/modelosUML/DiagramaClasesSrc2.svg)| !
+
+
 ## Diferencias con la versión anterior (src-v001)
 
 ### Cambios en la arquitectura
