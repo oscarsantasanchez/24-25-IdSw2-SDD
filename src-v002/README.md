@@ -4,6 +4,9 @@
 |-|
 |![Diagrama](/images/modelosUML/DiagramaClasesSrc2.svg)| !
 
+- El sistema `HojaDeCalculo` se estructura en paquetes MVC más utilitarios, centralizando la lógica en `ControladorHoja`.
+
+- La clase principal `HojaCalculo` coordina `vista`, `modelo` y `control`, mientras que `ComponenteHoja` unifica la jerarquía de clases.
 
 ## Diferencias con la versión anterior (src-v001)
 
