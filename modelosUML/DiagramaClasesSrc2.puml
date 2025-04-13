@@ -43,14 +43,6 @@ package "HojaDeCalculo" {
     HojaCalculo ..> Constantes : usa
     ControladorHoja ..> Utilidades : usa
 
-    abstract class ComponenteHoja
-    HojaCalculo --|> ComponenteHoja
-    InterfazUsuario --|> ComponenteHoja
-    VisualizadorHoja --|> ComponenteHoja
-    Teclado --|> ComponenteHoja
-    Matriz --|> ComponenteHoja
-    Celda --|> ComponenteHoja
-    Posicion --|> ComponenteHoja
 }
 
 @enduml
