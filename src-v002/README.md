@@ -2,7 +2,7 @@
 
 | Diagrama de Clases|
 |-|
-|![Diagrama](images/modelosUML/DiagramaClasesSrc2.svg)| !
+|![Diagrama](/images/modelosUML/DiagramaClasesSrc2.svg)| !
 
 
 ## Diferencias con la versión anterior (src-v001)
