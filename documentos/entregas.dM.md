@@ -15,73 +15,96 @@
 
 El proyecto de la hoja de cálculo presenta una jerarquización **botton-up (ascendente)**, ya que se empiezan por los componentes más básicos (Celda, Posición, Teclado) y posteriormente se combinan para formar estructuras más complejas como (Matriz, interfazUsuario y HojaCalculo). Cumple con los principios de jerarquización de ser un proyecto acíclico, direccional, estable y encapsulado.
 
-### Clases
 
-**🧱 Nivel Básico**
-
-| Clase                          | Depende de / Usa | Descripción                                                       |
-|--------------------------------|------------------|-------------------------------------------------------------------|
-| [Celda](/src/Celda.java)       | -                | Representa una celda individual con contenido completo y visible. |
-| [Posicion](/src/Posicion.java) | -                | Controla la fila y columna actual del cursor en la hoja.          |
-| [Teclado](/src/Teclado.java)   | -                | Gestiona la entrada del usuario desde consola.                    |
-
-**🧩 Nivel Medio**
-
-| Clase                                        | Depende de / Usa                | Descripción                                                           |
-|----------------------------------------------|---------------------------------|-----------------------------------------------------------------------|
-| [Matriz](/src/Matriz.java)                   | `Celda`                         | Composición de celdas, estructura completa de la hoja.                |
-| [InterfazUsuario](/src/InterfazUsuario.java) | `Teclado`, `Matriz`, `Posicion` | Controla la visualización de la hoja y la interacción con el usuario. |
-
-**🧠 Nivel Alto**
-
-| Clase                                | Depende de / Usa                        | Descripción                                                            |
-|--------------------------------------|-----------------------------------------|------------------------------------------------------------------------|
-| [HojaCalculo](/src/HojaCalculo.java) | `Matriz`, `Posicion`, `InterfazUsuario` | Clase principal que coordina todo el proyecto y su ciclo de ejecución. |
-
-**🧬 Herencia**
-
-| Clase                                      | Depende de / Usa | Descripción                                                                 |
-|--------------------------------------------|------------------|-----------------------------------------------------------------------------|
-| [ComponenteHoja](/src/ComponenteHoja.java) | -                | Clase base abstracta que provee constantes y utilidades a las demás clases. |
+- ✅ Alta cohesión  
+- ✅ Baja dependencia entre capas  
+- ✅ Separación clara de responsabilidades
 
 ---
 
-### Cumplimiento de Principios fundamentales
+## 🧱 Clases por Nivel
 
-<div align=center>
+### **Nivel Básico**
 
-|Principio|Cumplimiento|Observaciones|
-|-|-|-|
-|Alta Cohesión|✅ Bueno|Las clases tienen responsabilidades bien definidas|
-|Bajo Acoplamiento|✅ Bueno|Dependencias claras y limitadas|
-|Tamaño Adecuado|⚠️ Aceptable|Alguna clase podría dividirse|
-
-</div>
+| Clase     | Usa / Relación | Descripción                                                       |
+|-----------|----------------|-------------------------------------------------------------------|
+| `Celda`   | -              | Unidad mínima de datos de la hoja.                               |
+| `Posicion`| -              | Controla la ubicación del cursor en la hoja.                     |
+| `Teclado` | -              | Gestiona entrada de usuario desde consola.                       |
 
 ---
 
-### Análisis del acoplamiento
-El acoplamiento es bastante bajo pero en la clase `InterfazUsuario` tiene un acoplamiento relativamente alto ya que depende de 3 clases y la clase `HojaCalculo` depende de varios componentes pero es normal debido a ser la clase principal que coordina todo el proyecto. 
+### **Nivel Medio**
 
-Los tipos de acoplamiento que hay en el proyecto son **directo**, ya que todas las dependencias son explícitas y necesarias y **por mensaje**, mediante la llamada a métodos.
+| Clase             | Usa / Relación                      | Descripción                                                       |
+|------------------|--------------------------------------|-------------------------------------------------------------------|
+| `Matriz`         | Usa `Celda`                          | Estructura principal que contiene las celdas.                     |
+| `InterfazUsuario`| Usa `Teclado`, `Matriz`, `Posicion`  | Interfaz de entrada/salida y visualización.                      |
 
+---
 
-## 2. **Análisis detallado por clases**
+### **Nivel Alto**
 
-<div align=center>
+| Clase              | Usa / Relación                                      | Descripción                                                       |
+|--------------------|------------------------------------------------------|-------------------------------------------------------------------|
+| `HojaCalculo`      | Contiene `Matriz`, `Posicion`, `InterfazUsuario`    | Clase orquestadora de toda la ejecución de la hoja.              |
+| `VisualizadorHoja` | Usa `Matriz`                                        | Encargada exclusivamente de mostrar visualmente la hoja.         |
+| `ControladorHoja`  | Usa `Teclado`, `InterfazUsuario`, `VisualizadorHoja`| Controlador principal del flujo y lógica de operaciones.         |
 
-| Clase    | Cohesión       | Acoplamiento | Tamaño     | Fortalezas     |
-|--------------------|----------------|--------------|------------|----------|
-| **ComponenteHoja** | ✅ (funcional) | ✅         | 〽️   | - Base común para todas<br>- Encapsula constantes<br>- Métodos utilitarios |
-| **Celda**          | ✅ (funcional) | ✅         | ✅  | - Responsabilidad única clara<br>- Buen encapsulamiento<br>- Métodos cohesivos |
-| **Posicion**       | ✅ (funcional) | ✅         | ✅  | - Manejo perfecto de posición<br>- Validación de límites<br>- Movimiento claro |
-| **Teclado**        | ✅ (funcional) | 〽️     | 〽️   | - Encapsula interacción<br>- Tipos de entrada definidos<br>- Cierre recursos |
-| **Matriz**         | ✅ (funcional) | 〽️     | 〽️   | - Gestión bidimensional<br>- Inicialización adecuada<br>- Acceso controlado  |
-| **InterfazUsuario**| 〽️ (comunicacional) | ❌ | ❌     | - Encapsula visualización<br>- Formato claro<br>- Separa modelo-vista       |
-| **HojaCalculo**    | ✅ (funcional) | 〽️     | 〽️   | - Punto de entrada claro<br>- Ciclo de vida definido<br>- Delega bien       |
- 
-<sup>✅ Alta/Bajo/Excelente</sup>  
-<sup>〽️ Moderado/Adecuado</sup>  
-<sup>❌ Baja/Alto/Grande</sup>
+---
+
+### **Utilidades**
+
+| Clase         | Función                          | Uso                          |
+|---------------|----------------------------------|------------------------------|
+| `Utilidades`  | Métodos auxiliares comunes       | Usados por múltiples clases |
+| `Constantes`  | Almacén central de constantes    | Referenciado globalmente    |
+
+---
+
+## 🧬 Diagrama de Clases
+
+> A continuación se muestra la arquitectura visual con sus relaciones:
+
+|![Diagrama](/images/modelosUML/DiagramaClasesSrc2.svg)| !
+
+---
+
+## 📈 Cumplimiento de Principios
+
+| Principio           | Cumplimiento | Observaciones                                             |
+|---------------------|--------------|-----------------------------------------------------------|
+| **Alta Cohesión**   | ✅ Bueno     | Cada clase tiene responsabilidades claras y únicas       |
+| **Bajo Acoplamiento**| ✅ Bueno    | Interacción bien definida, dependencias controladas       |
+| **Tamaño Adecuado** | ⚠️ Aceptable | Algunas clases podrían dividirse o simplificarse aún más  |
+
+---
+
+## 🔍 Análisis del Acoplamiento
+
+- El proyecto mantiene un acoplamiento **directo y por mensaje**, explícito y necesario.
+- La clase `InterfazUsuario` tiene un nivel de dependencia **alto**, pero está justificado por su rol integrador.
+- `HojaCalculo`, como clase principal, depende de varios módulos, lo cual es esperado.
+
+---
+
+## 🧪 Análisis Detallado por Clase
+
+| Clase              | Cohesión       | Acoplamiento | Tamaño | Fortalezas                                                                 |
+|--------------------|----------------|--------------|--------|----------------------------------------------------------------------------|
+| `Celda`            | ✅ Funcional   | ✅ Bajo       | ✅     | Unidad clara, bien encapsulada                                             |
+| `Posicion`         | ✅ Funcional   | ✅ Bajo       | ✅     | Control preciso de posición y validación                                  |
+| `Teclado`          | ✅ Funcional   | 〽️ Medio     | 〽️    | Entrada robusta, manejo de recursos                                        |
+| `Matriz`           | ✅ Funcional   | 〽️ Medio     | 〽️    | Estructura organizada, composición adecuada                                |
+| `InterfazUsuario`  | 〽️ Comunicacional | ❌ Alto | ❌     | Función crítica, pero mejora posible dividiendo responsabilidades         |
+| `VisualizadorHoja` | ✅ Funcional   | ✅ Bajo       | ✅     | Separa claramente la visualización                                         |
+| `HojaCalculo`      | ✅ Funcional   | 〽️ Medio     | 〽️    | Orquestación efectiva, buen manejo del ciclo de vida                      |
+| `ControladorHoja`  | ✅ Funcional   | ✅ Bajo       | ✅     | Control central, bajo acoplamiento, composición clara                     |
+
+<sup>✅ Excelente</sup>  
+<sup>〽️ Aceptable</sup>  
+<sup>❌ Mejorable</sup>
+
+---
 
 </div>
