@@ -1,113 +1,119 @@
 [![](https://img.shields.io/badge/-Inicio-FFF?style=flat&logo=Emlakjet&logoColor=black)](/README.md) [![](https://img.shields.io/badge/-Entrega_1-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.d.md) [![](https://img.shields.io/badge/-Entrega_2-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dM.md)  [![](https://img.shields.io/badge/-Entrega_3-FFF?style=flat&logo=openstreetmap&logoColor=black)](/documentos/entregas.dOO.md)  [![](https://img.shields.io/badge/-Entrega_4-FFF?style=flat&logo=openstreetmap&logoColor=black)]()
 
+# 🧩 Hoja de Cálculo – Refactorización `src-v002`
 
-# Diseño modular
-## 📘 Hoja de Cálculo – Refactorización `src-v002`
-
-Este documento describe los **cambios estructurales y mejoras clave** realizadas respecto a la versión anterior (`src-v001`), adoptando una arquitectura más escalable, mantenible y extensible, basada en el patrón **MVC (Modelo-Vista-Controlador)**.
+Este documento resume los cambios clave realizados respecto a la versión anterior (`src-v001`), presentando una arquitectura escalable y mantenible basada en el patrón **MVC (Modelo-Vista-Controlador)**.
 
 ---
 
-## 🧠 1. Cambios Principales
+## 🔄 0. Diferencias con la versión anterior (`src-v001`)
 
-### 🧱 1.1 Implementación de MVC
+### 🏗️ Cambios arquitectónicos
 
-- **Modelo:**  
-  `Celda`, `Matriz`, `Posicion` → Representan datos y lógica interna.
+- ✅ Aplicación del patrón **MVC**:
+  - **Modelo:** `Celda`, `Matriz`, `Posicion`
+  - **Vista:** `VisualizadorHoja`, `InterfazUsuario`
+  - **Controlador:** `ControladorHoja`, `Teclado`
 
-- **Vista:**  
-  `VisualizadorHoja`, `InterfazUsuario`, `HojaCalculo` → Interacción con el usuario.
+- 📦 Organización por paquetes:
+  - `modelo`, `vista`, `controlador`, `util`
+  - Mejora en la separación de responsabilidades
 
-- **Controlador:**  
-  `ControladorHoja`, `Teclado` → Lógica de control y flujo.
+### ❌ Eliminación de herencia innecesaria
 
-- **Util:**  
-  `Utilidades`, `Constantes` → Métodos y valores auxiliares.
+- Se elimina `ComponenteHoja` como clase base universal
+- Se reemplaza por composición, interfaces y utilidades compartidas
 
+### 🧹 Módulos más pequeños y especializados
 
-- ✅ Alta cohesión  
-- ✅ Baja dependencia entre capas  
-- ✅ Separación clara de responsabilidades
-- ❌ Eliminación de ComponenteHoja (ya no hay herencia)
-
----
-
-## 🧱 Clases por Nivel
-
-### **Nivel Básico**
-
-| Clase     | Usa / Relación | Descripción                                                       |
-|-----------|----------------|-------------------------------------------------------------------|
-| `Celda`   | -              | Unidad mínima de datos de la hoja.                               |
-| `Posicion`| -              | Controla la ubicación del cursor en la hoja.                     |
-| `Teclado` | -              | Gestiona entrada de usuario desde consola.                       |
+- Cada clase tiene una única responsabilidad
+- Código más limpio, mantenible y preparado para ampliaciones
 
 ---
 
-### **Nivel Medio**
+## 🧠 1. Diseño Modular y Estructura MVC
 
-| Clase             | Usa / Relación                      | Descripción                                                       |
-|------------------|--------------------------------------|-------------------------------------------------------------------|
-| `Matriz`         | Usa `Celda`                          | Estructura principal que contiene las celdas.                     |
-| `InterfazUsuario`| Usa `Teclado`, `Matriz`, `Posicion`  | Interfaz de entrada/salida y visualización.                      |
+### 🎯 Objetivo
 
----
+Adoptar una arquitectura que favorezca la **extensibilidad**, **mantenibilidad** y **claridad funcional**.
 
-### **Nivel Alto**
-
-| Clase              | Usa / Relación                                      | Descripción                                                       |
-|--------------------|------------------------------------------------------|-------------------------------------------------------------------|
-| `HojaCalculo`      | Contiene `Matriz`, `Posicion`, `InterfazUsuario`    | Clase orquestadora de toda la ejecución de la hoja.              |
-| `VisualizadorHoja` | Usa `Matriz`                                        | Encargada exclusivamente de mostrar visualmente la hoja.         |
-| `ControladorHoja`  | Usa `Teclado`, `InterfazUsuario`, `VisualizadorHoja`| Controlador principal del flujo y lógica de operaciones.         |
+| Capa        | Clases Principales                                   | Descripción                                                             |
+|-------------|-------------------------------------------------------|-------------------------------------------------------------------------|
+| **Modelo**  | `Celda`, `Matriz`, `Posicion`                         | Representan los datos y su lógica interna                              |
+| **Vista**   | `InterfazUsuario`, `VisualizadorHoja`                | Encargadas de mostrar la hoja y gestionar la interacción visual        |
+| **Controlador**| `ControladorHoja`, `Teclado`                      | Controlan el flujo y la lógica del programa                            |
+| **Utilidades**| `Utilidades`, `Constantes`                         | Funciones auxiliares y constantes de uso común                         |
 
 ---
 
-### **Utilidades**
+## 🧱 2. Jerarquía de Clases
 
-| Clase         | Función                          | Uso                          |
-|---------------|----------------------------------|------------------------------|
-| `Utilidades`  | Métodos auxiliares comunes       | Usados por múltiples clases |
-| `Constantes`  | Almacén central de constantes    | Referenciado globalmente    |
+### 🔹 Nivel Básico
 
----
-
-## 🧬 Diagrama de Clases
-
-|![Diagrama](/images/modelosUML/DiagramaClasesSrc2.svg)| !
+| Clase       | Usa / Depende de | Descripción                                  |
+|-------------|------------------|----------------------------------------------|
+| `Celda`     | -                | Unidad mínima de datos en la hoja            |
+| `Posicion`  | -                | Controla la ubicación del cursor             |
+| `Teclado`   | -                | Entrada del usuario desde consola            |
 
 ---
 
-## 📈 Cumplimiento de Principios
+### 🔸 Nivel Medio
 
-| Principio           | Cumplimiento | Observaciones                                             |
-|---------------------|--------------|-----------------------------------------------------------|
-| **Alta Cohesión**   | ✅ Bueno     | Cada clase tiene responsabilidades claras y únicas       |
-| **Bajo Acoplamiento**| ✅ Bueno    | Interacción bien definida, dependencias controladas       |
-| **Tamaño Adecuado** | ⚠️ Aceptable | Algunas clases podrían dividirse o simplificarse aún más  |
-
----
-
-## 🔍 Análisis del Acoplamiento
-
-- El proyecto mantiene un acoplamiento **directo y por mensaje**, explícito y necesario.
-- La clase `InterfazUsuario` tiene un nivel de dependencia **alto**, pero está justificado por su rol integrador.
-- `HojaCalculo`, como clase principal, depende de varios módulos, lo cual es esperado.
+| Clase             | Usa                                 | Descripción                                 |
+|------------------|--------------------------------------|---------------------------------------------|
+| `Matriz`         | `Celda`                              | Estructura bidimensional de celdas          |
+| `InterfazUsuario`| `Teclado`, `Matriz`, `Posicion`      | Visualiza la hoja e interactúa con el usuario |
 
 ---
 
-## 🧪 Análisis Detallado por Clase
+### 🔺 Nivel Alto
 
-| Clase              | Cohesión       | Acoplamiento | Tamaño | Fortalezas                                                                 |
-|--------------------|----------------|--------------|--------|----------------------------------------------------------------------------|
-| `Celda`            | ✅ Funcional   | ✅ Bajo       | ✅     | Unidad clara, bien encapsulada                                             |
-| `Posicion`         | ✅ Funcional   | ✅ Bajo       | ✅     | Control preciso de posición y validación                                  |
-| `Teclado`          | ✅ Funcional   | 〽️ Medio     | 〽️    | Entrada robusta, manejo de recursos                                        |
-| `Matriz`           | ✅ Funcional   | 〽️ Medio     | 〽️    | Estructura organizada, composición adecuada                                |
-| `InterfazUsuario`  | 〽️ Comunicacional | 〽️ Medio | 〽️     | Función crítica, pero mejora posible dividiendo responsabilidades         |
-| `VisualizadorHoja` | ✅ Funcional   | ✅ Bajo       | ✅     | Separa claramente la visualización                                         |
-| `HojaCalculo`      | ✅ Funcional   | 〽️ Medio     | 〽️    | Orquestación efectiva, buen manejo del ciclo de vida                      |
-| `ControladorHoja`  | ✅ Funcional   | ✅ Bajo       | ✅     | Control central, bajo acoplamiento, composición clara                     |
+| Clase              | Usa                                                       | Descripción                                     |
+|--------------------|-----------------------------------------------------------|-------------------------------------------------|
+| `HojaCalculo`      | `Matriz`, `Posicion`, `InterfazUsuario`                   | Orquesta el ciclo de vida de la aplicación     |
+| `VisualizadorHoja` | `Matriz`                                                  | Encargada de mostrar la hoja en pantalla       |
+| `ControladorHoja`  | `Teclado`, `InterfazUsuario`, `VisualizadorHoja`          | Gestiona los comandos e interacciones principales |
+
+---
+
+### ⚙️ Utilidades
+
+| Clase        | Función                     | Uso principal                  |
+|--------------|-----------------------------|--------------------------------|
+| `Utilidades` | Métodos auxiliares comunes  | Reutilizados por varias clases |
+| `Constantes` | Valores constantes globales | Refiere a tamaños, caracteres, etc. |
+
+---
+
+## 🧬 3. Diagrama de Clases
+
+> ![Diagrama de clases UML](/images/modelosUML/DiagramaClasesSrc2.svg)
+
+---
+
+## 📊 4. Cumplimiento de Principios
+
+| Principio             | Evaluación | Comentario                                          |
+|-----------------------|------------|-----------------------------------------------------|
+| **Alta Cohesión**     | ✅ Buena   | Clases con responsabilidades bien definidas         |
+| **Bajo Acoplamiento** | ✅ Buena   | Dependencias claras, interfaces explícitas          |
+| **Tamaño Adecuado**   | ⚠️ Aceptable | Algunas clases aún pueden refactorizarse más        |
+
+---
+
+## 🧪 5. Análisis por Clase
+
+| Clase              | Cohesión       | Acoplamiento | Tamaño | Fortalezas                                                                    |
+|--------------------|----------------|--------------|--------|-------------------------------------------------------------------------------|
+| `Celda`            | ✅ Funcional   | ✅ Bajo       | ✅     | Unidad clara, bien encapsulada                                                |
+| `Posicion`         | ✅ Funcional   | ✅ Bajo       | ✅     | Control preciso de posición y validación                                     |
+| `Teclado`          | ✅ Funcional   | 〽️ Medio     | 〽️    | Entrada robusta, manejo de errores y recursos                                 |
+| `Matriz`           | ✅ Funcional   | 〽️ Medio     | 〽️    | Gestión estructurada, acceso controlado                                       |
+| `InterfazUsuario`  | 〽️ Comunicacional | 〽️ Medio | 〽️     | Puede refactorizarse para reducir dependencias                                |
+| `VisualizadorHoja` | ✅ Funcional   | ✅ Bajo       | ✅     | Separa claramente la visualización de la lógica                               |
+| `HojaCalculo`      | ✅ Funcional   | 〽️ Medio     | 〽️    | Buena delegación y estructura general                                         |
+| `ControladorHoja`  | ✅ Funcional   | ✅ Bajo       | ✅     | Orquestador claro, buen uso de composición y control de flujo                 |
 
 <sup>✅ Excelente</sup>  
 <sup>〽️ Aceptable</sup>  
@@ -115,4 +121,5 @@ Este documento describe los **cambios estructurales y mejoras clave** realizadas
 
 ---
 
-</div>
+
+
