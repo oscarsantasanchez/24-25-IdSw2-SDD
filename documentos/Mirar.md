@@ -90,7 +90,7 @@
 
 ---
 
-## 🧪 Análisis Detallado por Clases
+## 🧪 Análisis Detallado
 
 | Componente     | Cohesión       | Acoplamiento | Tamaño  | Fortalezas                                                                 |
 |----------------|----------------|--------------|---------|----------------------------------------------------------------------------|
@@ -101,7 +101,7 @@
 
 ---
 
-## ⚖ Comparativa con Versión Anterior
+## ⚖ Comparativa de Versiones
 
 | Aspecto              | Versión 1 (src-v001)     | Versión 2 (src-v002)         |
 |----------------------|--------------------------|-------------------------------|
