@@ -2,23 +2,33 @@
 
 
 # Diseño modular
+## 📘 Hoja de Cálculo – Refactorización `src-v002`
 
-## 1. **Jerarquización del Proyecto**
+Este documento describe los **cambios estructurales y mejoras clave** realizadas respecto a la versión anterior (`src-v001`), adoptando una arquitectura más escalable, mantenible y extensible, basada en el patrón **MVC (Modelo-Vista-Controlador)**.
 
-<div align=center>
+---
 
-| Diagrama de Clases|
-|-|
-|![Jerarquizacion](/images/modelosUML/DiseñoModular.svg)| !
+## 🧠 1. Cambios Principales
 
-</div>
+### 🧱 1.1 Implementación de MVC
 
-El proyecto de la hoja de cálculo presenta una jerarquización **botton-up (ascendente)**, ya que se empiezan por los componentes más básicos (Celda, Posición, Teclado) y posteriormente se combinan para formar estructuras más complejas como (Matriz, interfazUsuario y HojaCalculo). Cumple con los principios de jerarquización de ser un proyecto acíclico, direccional, estable y encapsulado.
+- **Modelo:**  
+  `Celda`, `Matriz`, `Posicion` → Representan datos y lógica interna.
+
+- **Vista:**  
+  `VisualizadorHoja`, `InterfazUsuario`, `HojaCalculo` → Interacción con el usuario.
+
+- **Controlador:**  
+  `ControladorHoja`, `Teclado` → Lógica de control y flujo.
+
+- **Util:**  
+  `Utilidades`, `Constantes` → Métodos y valores auxiliares.
 
 
 - ✅ Alta cohesión  
 - ✅ Baja dependencia entre capas  
 - ✅ Separación clara de responsabilidades
+- ❌ Eliminación de ComponenteHoja (ya no hay herencia)
 
 ---
 
@@ -64,8 +74,6 @@ El proyecto de la hoja de cálculo presenta una jerarquización **botton-up (asc
 
 ## 🧬 Diagrama de Clases
 
-> A continuación se muestra la arquitectura visual con sus relaciones:
-
 |![Diagrama](/images/modelosUML/DiagramaClasesSrc2.svg)| !
 
 ---
@@ -96,7 +104,7 @@ El proyecto de la hoja de cálculo presenta una jerarquización **botton-up (asc
 | `Posicion`         | ✅ Funcional   | ✅ Bajo       | ✅     | Control preciso de posición y validación                                  |
 | `Teclado`          | ✅ Funcional   | 〽️ Medio     | 〽️    | Entrada robusta, manejo de recursos                                        |
 | `Matriz`           | ✅ Funcional   | 〽️ Medio     | 〽️    | Estructura organizada, composición adecuada                                |
-| `InterfazUsuario`  | 〽️ Comunicacional | ❌ Alto | ❌     | Función crítica, pero mejora posible dividiendo responsabilidades         |
+| `InterfazUsuario`  | 〽️ Comunicacional | 〽️ Medio | 〽️     | Función crítica, pero mejora posible dividiendo responsabilidades         |
 | `VisualizadorHoja` | ✅ Funcional   | ✅ Bajo       | ✅     | Separa claramente la visualización                                         |
 | `HojaCalculo`      | ✅ Funcional   | 〽️ Medio     | 〽️    | Orquestación efectiva, buen manejo del ciclo de vida                      |
 | `ControladorHoja`  | ✅ Funcional   | ✅ Bajo       | ✅     | Control central, bajo acoplamiento, composición clara                     |
