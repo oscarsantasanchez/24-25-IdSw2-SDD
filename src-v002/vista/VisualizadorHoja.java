@@ -13,11 +13,8 @@ public class VisualizadorHoja {
         
         int filaActual = posicion.getFila();
         int columnaActual = posicion.getColumna();
-        
 
         mostrarEncabezadosColumnas(columnaActual, matriz.getTotalColumnas());
-        
-
         mostrarFilas(matriz, filaActual, columnaActual);
     }
     
