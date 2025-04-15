@@ -18,7 +18,7 @@ public class Teclado {
 
     public String leerEntrada(String mensaje) {
         System.out.print(mensaje);
-        scanner.nextLine(); // Consume la línea anterior
+        scanner.nextLine(); 
         return scanner.nextLine();
     }
     
