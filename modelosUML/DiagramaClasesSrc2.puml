@@ -1,0 +1,48 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+
+package "HojaDeCalculo" {
+
+    package Controlador {
+        class ControladorHoja
+        class Teclado
+    }
+
+    package Modelo {
+        class Celda
+        class Matriz
+        class Posicion
+    }
+
+    package Util {
+        class Constantes
+        class Utilidades
+    }
+
+    package Vista {
+        class InterfazUsuario
+        class VisualizadorHoja
+        class HojaCalculo
+    }
+
+    HojaCalculo --> ControladorHoja : contiene
+    ControladorHoja --> InterfazUsuario : usa
+    ControladorHoja --> Teclado : usa
+    ControladorHoja --> VisualizadorHoja : usa
+
+    InterfazUsuario --> Posicion : obtiene
+    InterfazUsuario --> Matriz : visualiza
+
+    Teclado --> Celda : modifica
+
+    Matriz --> Celda : compuesta de
+    HojaCalculo --> Matriz : contiene
+    HojaCalculo --> Posicion : consulta
+
+    HojaCalculo ..> Constantes : usa
+    ControladorHoja ..> Utilidades : usa
+
+}
+
+@enduml

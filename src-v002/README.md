@@ -1,5 +1,13 @@
 # Hoja de Cálculo - Versión 2
 
+| Diagrama de Clases|
+|-|
+|![Diagrama](/images/modelosUML/DiagramaClasesSrc2.svg)| !
+
+- El sistema `HojaDeCalculo` se estructura en paquetes MVC más utilitarios, centralizando la lógica en `ControladorHoja`.
+
+- La clase principal `HojaCalculo` coordina `vista`, `modelo` y `control`.
+
 ## Diferencias con la versión anterior (src-v001)
 
 ### Cambios en la arquitectura
