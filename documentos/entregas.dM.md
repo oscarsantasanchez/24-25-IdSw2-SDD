@@ -92,34 +92,57 @@ Adoptar una arquitectura que favorezca la **extensibilidad**, **mantenibilidad**
 
 ---
 
-## 📊 4. Cumplimiento de Principios
+## ✅ 4. Cumplimiento de Principios Fundamentales
 
-| Principio             | Evaluación | Comentario                                          |
-|-----------------------|------------|-----------------------------------------------------|
-| **Alta Cohesión**     | ✅ Buena   | Clases con responsabilidades bien definidas         |
-| **Bajo Acoplamiento** | ✅ Buena   | Dependencias claras, interfaces explícitas          |
-| **Tamaño Adecuado**   | ⚠️ Aceptable | Algunas clases aún pueden refactorizarse más        |
+| Principio         | Cumplimiento   | Observaciones                                                              |
+|------------------|----------------|-----------------------------------------------------------------------------|
+| Alta Cohesión     | ✅ Excelente    | Responsabilidades claramente separadas por paquetes.                        |
+| Bajo Acoplamiento | ✅ Excelente    | Dependencias minimizadas gracias a la arquitectura MVC.                     |
+| Tamaño Adecuado   | ✅ Excelente    | Clases enfocadas en una única responsabilidad.                              |
+
+---
+
+## 🔍 5.  Análisis del Acoplamiento
+
+- **Acoplamiento por datos**: Comunicación entre clases a través de estructuras bien definidas.
+- **Acoplamiento por interfaz**: Interacción mediante métodos públicos, sin dependencia en implementaciones internas.
+- **Separación de responsabilidades**: Cada clase pertenece a una capa específica (modelo, vista o controlador).
+- **Utilidades externas**: Centralización de constantes y funciones reutilizables en clases utilitarias.
 
 ---
 
-## 🧪 5. Análisis por Clase
+## 🧪 6. Análisis Detallado
 
-| Clase              | Cohesión       | Acoplamiento | Tamaño | Fortalezas                                                                    |
-|--------------------|----------------|--------------|--------|-------------------------------------------------------------------------------|
-| `Celda`            | ✅ Funcional   | ✅ Bajo       | ✅     | Unidad clara, bien encapsulada                                                |
-| `Posicion`         | ✅ Funcional   | ✅ Bajo       | ✅     | Control preciso de posición y validación                                     |
-| `Teclado`          | ✅ Funcional   | 〽️ Medio     | 〽️    | Entrada robusta, manejo de errores y recursos                                 |
-| `Matriz`           | ✅ Funcional   | 〽️ Medio     | 〽️    | Gestión estructurada, acceso controlado                                       |
-| `InterfazUsuario`  | 〽️ Comunicacional | 〽️ Medio | 〽️     | Puede refactorizarse para reducir dependencias                                |
-| `VisualizadorHoja` | ✅ Funcional   | ✅ Bajo       | ✅     | Separa claramente la visualización de la lógica                               |
-| `HojaCalculo`      | ✅ Funcional   | 〽️ Medio     | 〽️    | Buena delegación y estructura general                                         |
-| `ControladorHoja`  | ✅ Funcional   | ✅ Bajo       | ✅     | Orquestador claro, buen uso de composición y control de flujo                 |
-
-<sup>✅ Excelente</sup>  
-<sup>〽️ Aceptable</sup>  
-<sup>❌ Mejorable</sup>
+| Componente     | Cohesión       | Acoplamiento | Tamaño  | Fortalezas                                                                 |
+|----------------|----------------|--------------|---------|----------------------------------------------------------------------------|
+| **Modelo**     | ✅ Funcional    | ✅ Bajo       | ✅ Adecuado | Datos encapsulados, sin lógica de presentación ni control.                 |
+| **Vista**      | ✅ Funcional    | ✅ Bajo       | ✅ Adecuado | Solo presentación e interacción, sin lógica de negocio.                    |
+| **Controlador**| ✅ Funcional    | ✅ Bajo       | ✅ Adecuado | Orquesta el flujo de la app, mantiene modelo y vista desacoplados.        |
+| **Util** | ✅ Funcional    | ✅ Bajo       | ✅ Adecuado | Reutilización y centralización de lógica común.                            |
 
 ---
+
+## ⚖ 7. Comparativa de Versiones
+
+| Aspecto              | Versión 1 (src-v001)     | Versión 2 (src-v002)         |
+|----------------------|--------------------------|-------------------------------|
+| Arquitectura         | Jerárquica monolítica     | Patrón MVC                   |
+| Cohesión             | Aceptable                | Excelente                     |
+| Acoplamiento         | Moderado/Alto            | Bajo                          |
+| Mantenibilidad       | Media                    | Alta                          |
+| Extensibilidad       | Limitada                 | Mejorada                      |
+| Reutilización        | Baja                     | Alta                          |
+
+---
+
+## 8. Mejoras `src-v002`
+
+1. **Separación clara de responsabilidades** mediante Modelo, Vista y Controlador.
+2. **Modularización con paquetes** que favorecen la navegación y mantenibilidad.
+3. **Menor acoplamiento** entre componentes.
+4. **Centralización de constantes y utilidades** para evitar duplicación.
+5. **Clases especializadas** en tareas concretas y bien acotadas.
+6. **Mayor cohesión**: cada clase cumple un único propósito definido.
 
 
 
