@@ -16,23 +16,27 @@ Principales objetivos del diseño:
 
 <div align=center>
 
-| Diagrama de Clases | Diagramas de Estado |  
-|--------------------|---------------------|  
-| ![Clases](/images/modelosUML/DiagramaClases1.svg) | ![Matriz](/images/modelosUML/DiagramaEstadosMatriz.svg)<br>![Celda](/images/modelosUML/DiagramaEstadosCelda.svg)<br>![Interfaz](/images/modelosUML/DiagramaEstadosInterfazUsuario.svg) | 
+| Diagrama de Clases |
+|-|
+| ![Clases](/images/modelosUML/DiagramaClases1.svg) |
+
+| Diagrama de Estado Matriz | Diagrama de Estado Celda | Diagrama de Estado InterfazUsuario |  
+|---------------------|----------------|---------------------|
+| ![Matriz](/images/modelosUML/DiagramaEstadosMatriz.svg) | ![Celda](/images/modelosUML/DiagramaEstadosCelda.svg) | ![Interfaz](/images/modelosUML/DiagramaEstadosInterfazUsuario.svg) | 
 
 </div>
 
 ## 3. 💻 Código
 
-| Clase | 🔗 Enlace | 🧬 Composición |  
-|-------|----------|----------------|  
-| **ComponenteHoja** | [📁](/src/ComponenteHoja.java) | Clase base abstracta |  
-| **Matriz** | [📁](/src/Matriz.java) | Contiene múltiples `Celda` |  
-| **Celda** | [📁](/src/Celda.java) | Parte de `Matriz` |  
-| **Posicion** | [📁](/src/Posicion.java) | Navegación en matriz |  
-| **Teclado** | [📁](/src/Teclado.java) | Modifica `Celda` |  
-| **InterfazUsuario** | [📁](/src/InterfazUsuario.java) | Contiene `Teclado` |  
-| **HojaCalculo** | [📁](/src/HojaCalculo.java) | Coordina todos los componentes |  
+| Clase | 🧬 Composición |  
+|-------|----------------|  
+| [**ComponenteHoja**](/src-v001/ComponenteHoja.java) | Clase base abstracta |  
+| [**Matriz**](/src-v001/Matriz.java) | Contiene múltiples `Celda` |  
+| [**Celda**](/src-v001/Celda.java) | Parte de `Matriz` |  
+| [**Posicion**](/src-v001/Posicion.java) | Navegación en matriz |  
+| [**Teclado**](/src-v001/Teclado.java) | Modifica `Celda` |  
+| [**InterfazUsuario**](/src-v001/InterfazUsuario.java) | Contiene `Teclado` |  
+| [**HojaCalculo**](/src-v001/HojaCalculo.java) | Coordina todos los componentes |  
 
 ## 4. 📖 Legibilidad
 
