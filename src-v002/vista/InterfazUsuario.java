@@ -7,7 +7,9 @@ public class InterfazUsuario {
     private Teclado teclado;
     private VisualizadorHoja visualizador;
     
-    public InterfazUsuario() {
+    public InterfazUsuario(Matriz matriz, Posicion posicion) {
+        this.matriz = matriz;
+        this.posicion = posicion;
         this.teclado = new Teclado();
         this.visualizador = new VisualizadorHoja();
     }
@@ -17,9 +19,9 @@ public class InterfazUsuario {
     }
 
 
-    public void actualizarVista(Matriz matriz, Posicion posicion) {
-        visualizador.mostrarHoja(matriz, posicion);
-        visualizador.mostrarInfoCelda(matriz, posicion);
+    public void actualizarVista() {
+        visualizador.mostrarHoja();
+        visualizador.mostrarInfoCelda();
         visualizador.mostrarInstrucciones();
     }
 }
