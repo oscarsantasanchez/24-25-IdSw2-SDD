@@ -7,11 +7,11 @@ public class Matriz {
 
     public Matriz() {
         celdas = new Celda[Constantes.TOTAL_FILAS][Constantes.TOTAL_COLUMNAS];
-        inicializarHoja();
+        inicializarMatriz();
     }
     
 
-    private void inicializarHoja() {
+    private void inicializarMatriz() {
         for (int i = 0; i < Constantes.TOTAL_FILAS; i++) {
             for (int j = 0; j < Constantes.TOTAL_COLUMNAS; j++) {
                 celdas[i][j] = new Celda();
