@@ -9,6 +9,7 @@ import util.Constantes;
 public class ControladorHoja {
     private Matriz matriz;
     private Posicion posicion;
+    private boolean expresionComando;
     
 
     public ControladorHoja(Matriz matriz, Posicion posicion) {
@@ -18,19 +19,33 @@ public class ControladorHoja {
     
 
     public boolean procesarComando(char comando, Teclado teclado) {
-        switch (comando) {
-            case Constantes.COMANDO_ARRIBA -> posicion.moverArriba();
-            case Constantes.COMANDO_ABAJO -> posicion.moverAbajo();
-            case Constantes.COMANDO_IZQUIERDA -> posicion.moverIzquierda();
-            case Constantes.COMANDO_DERECHA -> posicion.moverDerecha();
-            case Constantes.COMANDO_SALIR -> return false;  
-            case Constantes.COMANDO_EDITAR {
+        expresionComando = switch (comando) {
+            case Constantes.COMANDO_ARRIBA -> {
+                posicion.moverArriba();
+                yield true;
+            }
+            case Constantes.COMANDO_ABAJO -> {
+                posicion.moverAbajo();
+                yield true;
+            }
+            case Constantes.COMANDO_IZQUIERDA -> {
+                posicion.moverIzquierda();
+                yield true;
+            }
+            case Constantes.COMANDO_DERECHA -> {
+                posicion.moverDerecha();
+                yield true;
+            }
+            case Constantes.COMANDO_EDITAR -> {
                 Celda celdaActual = matriz.getCelda(posicion.getFila(), posicion.getColumna());
                 teclado.editarCelda(celdaActual);
+                yield true;
             }
-           
-        }
-        return true;
+            case Constantes.COMANDO_SALIR -> false;
+            default -> true;
+        };
+
+        return expresionComando;
     }
     
 
