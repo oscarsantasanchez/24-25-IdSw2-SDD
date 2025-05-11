@@ -77,8 +77,5 @@
 
 ---
 
-## 🚀 Conclusión
-
-La versión 2 del sistema de hoja de cálculo representa una evolución significativa hacia un diseño profesional y mantenible. Los cambios introducidos en nomenclatura, arquitectura, y aplicación de patrones facilitan su escalabilidad y claridad. Además, la adopción de MVC y el cumplimiento de principios SOLID fortalecen la robustez del software.
 
 
