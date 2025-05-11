@@ -14,7 +14,7 @@
 
 ## 🔄 Cambios Clave respecto a `src-v001`
 
-### 🧱 Refactorización de Arquitectura
+###  Refactorización de Arquitectura
 
 | Cambio | Descripción |
 |--------|-------------|
@@ -24,7 +24,7 @@
 
 ---
 
-### 🧼 Mejora en Nomenclatura y Sintaxis
+###  Mejora en Nomenclatura y Sintaxis
 
 | Cambio | Descripción |
 |--------|-------------|
@@ -33,7 +33,7 @@
 
 ---
 
-### 🧩 Cohesión y Acoplamiento
+###  Cohesión y Acoplamiento
 
 | Mejora | Resultado |
 |--------|----------|
