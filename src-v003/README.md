@@ -70,10 +70,10 @@
 
 ## 📌 Mejoras Técnicas
 
-- ✅ Código más legible y organizado
-- ✅ Métodos con nombres más intuitivos
-- ✅ Uso de estructuras modernas de Java (como `switch expression`)
-- ✅ Preparado para nuevas funcionalidades sin romper la arquitectura existente
+-  Código más legible y organizado
+-  Métodos con nombres más intuitivos
+-  Uso de estructuras modernas de Java (como `switch expression`)
+-  Preparado para nuevas funcionalidades sin romper la arquitectura existente
 
 ---
 
