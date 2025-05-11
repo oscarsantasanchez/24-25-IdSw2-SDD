@@ -2,7 +2,6 @@ import modelo.Matriz;
 import modelo.Posicion;
 import vista.InterfazUsuario;
 import controlador.ControladorHoja;
-import controlador.Teclado;
 
 public class HojaCalculo {
     private Matriz matriz;
@@ -12,41 +11,20 @@ public class HojaCalculo {
     
 
     public HojaCalculo() {
-
         this.matriz = new Matriz();
         this.posicion = new Posicion();
         
-
         this.controlador = new ControladorHoja(matriz, posicion);
         
-
         this.interfaz = new InterfazUsuario();
     }
     
+    public void iniciar() {
+        interfaz.iniciar(matriz, posicion, controlador);
+    }
 
     public static void main(String[] args) {
         HojaCalculo hoja = new HojaCalculo();
         hoja.iniciar();
-    }
-    
-
-    public void iniciar() {
-        Teclado teclado = interfaz.getTeclado();
-        boolean ejecutando = true;
-        
-        while (ejecutando) {
-
-            interfaz.actualizarVista(matriz, posicion);
-            
-
-            char comando = teclado.leerComando();
-            
-
-            ejecutando = controlador.procesarComando(comando, teclado);
-        }
-        
-
-        teclado.cerrar();
-        System.out.println("Programa finalizado.");
     }
 }
