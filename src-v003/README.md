@@ -1,5 +1,5 @@
 
-# 📊 Hoja de Cálculo - Versión 2
+# 📊 Hoja de Cálculo - Versión 3
 
 <div align="center">
   <img src="/images/modelosUML/DiagramaClasesSrc2.svg" alt="Diagrama de Clases">
@@ -67,7 +67,7 @@
 | `InterfazUsuario` | Inicializa e interactúa con el usuario |
 
 ---
-
+## 🔄 Cambios Clave respecto a `src-v002`
 ## 📌 Mejoras Técnicas
 
 -  Código más legible y organizado
