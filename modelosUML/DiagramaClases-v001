@@ -1,0 +1,38 @@
+@startuml
+hide empty members
+hide circles
+
+package "Hoja de Cálculo v001" {
+  abstract class ComponenteHoja {
+    // Clase base para todos los componentes
+  }
+  
+  class HojaCalculo extends ComponenteHoja {
+  }
+  
+  class Matriz extends ComponenteHoja {
+  }
+  
+  class Celda extends ComponenteHoja {
+  }
+  
+  class Posicion extends ComponenteHoja {
+  }
+  
+  class InterfazUsuario extends ComponenteHoja {
+  }
+  
+  class Teclado extends ComponenteHoja {
+  }
+  
+  ' Relaciones
+  HojaCalculo *-- Matriz : contiene
+  HojaCalculo *-- Posicion : tiene
+  HojaCalculo *-- InterfazUsuario : utiliza
+  Matriz *-- Celda : compuesta de
+  InterfazUsuario *-- Teclado : usa
+  InterfazUsuario ..> Celda : visualiza
+  InterfazUsuario ..> Posicion : muestra
+  Teclado ..> Celda : modifica
+}
+@enduml
