@@ -28,6 +28,6 @@ Se han añadido tres nuevos tipos de celdas que se seleccionan automáticamente 
 
 Al editar el contenido de una celda:
 - Si comienza con `=`, se asigna como **Celda Fórmula**.
-- Si coincide con el patrón de referencia (`[A-Za-z]+[0-9]+`), se asigna como **Celda Referencia**.
+- Si coincide con el patrón de referencia (`[A-Za-z][0-9]`), se asigna como **Celda Referencia**.
 - En cualquier otro caso, se asigna como **Celda Texto**.
 
