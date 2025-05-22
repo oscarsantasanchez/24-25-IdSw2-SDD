@@ -3,11 +3,9 @@ package modelo;
 import java.util.Stack;
 
 public class CeldaFormula extends Celda {
-    private Matriz matriz;
     
     public CeldaFormula(String contenido, Matriz matriz) {
         super(contenido);
-        this.matriz = matriz;
     }
     
     @Override
