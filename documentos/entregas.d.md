@@ -19,7 +19,7 @@ Principales objetivos del diseño:
 
 | Diagrama de Clases |
 |-|
-| ![Clases](/images/modelosUML/DiagramaClases1.svg) |
+| ![Clases](/images/modelosUML/DiagramaClases-v001.svg) |
 
 | Diagrama de Estado Matriz | Diagrama de Estado Celda | Diagrama de Estado InterfazUsuario |  
 |---------------------|----------------|---------------------|
