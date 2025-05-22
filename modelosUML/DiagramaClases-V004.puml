@@ -51,12 +51,11 @@ Celda <|-- CeldaTexto
 Celda <|-- CeldaFormula
 Celda <|-- CeldaReferencia
 Matriz o-- Celda
-ControladorHoja o-- Matriz
+ControladorHoja o- Matriz
 ControladorHoja o-- Posicion
 InterfazUsuario o-- ControladorHoja
 InterfazUsuario o-- VisualizadorHoja
 InterfazUsuario o-- Teclado
-CeldaFormula o-- Matriz
 CeldaReferencia o-- Matriz
 
 @enduml
